@@ -26,9 +26,17 @@ const Header = () => {
           <img src="/polytechlille.png" alt="Main logo Polytech Lille" />
         </a>
       </div>
-      {width > 1280 ? <MenuLaptop /> : <MenuMobile isOpen={MenuMobileOpen} />}
-      {width > 768 ? <Sponsor /> : null}
-      {width <= 1280 ? <OpenMenu toggleMenuMobile={toggleMenuMobile} /> : null}
+      {width > 1280 ? (
+        <>
+          <MenuLaptop />
+          <Sponsor />
+        </>
+      ) : (
+        <MenuMobile isOpen={MenuMobileOpen} />
+      )}
+      {width <= 1280 ? (
+        <OpenMenu isOpen={MenuMobileOpen} toggleMenuMobile={toggleMenuMobile} />
+      ) : null}
     </HeaderStyled>
   );
 };

@@ -17,6 +17,10 @@ export const HeaderStyled = styled.header`
 
   > div:nth-of-type(1) {
     height: 100%;
+
+    @media screen and (max-width: 768px) {
+      height: 75%;
+    }
   }
 `;
 
@@ -51,3 +55,42 @@ export const MenuLaptopStyled = styled.div`
 `;
 
 export const MenuMobileStyled = styled.div``;
+
+export const OpenMenuStyled = styled.div<{ $isOpen: boolean }>`
+  z-index: 1000;
+  margin-left: 24px;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease-in-out;
+
+  > span {
+    position: absolute;
+    top: 20px;
+    background-color: white;
+    filter: drop-shadow(0 0 0.75rem ${color.black});
+    height: 2px;
+    width: 50px;
+    transition:
+      transform 0.3s ease-out,
+      opacity 0.1s ease-out;
+
+    @media screen and (max-width: 300px) {
+      width: 30px;
+    }
+  }
+
+  > span:nth-of-type(1) {
+    transform: ${(props) =>
+      props.$isOpen ? "translateY(10px) rotate(135deg)" : "translateY(20px)"};
+  }
+
+  > span:nth-of-type(2) {
+    opacity: ${(props) => (props.$isOpen ? "0" : "1")};
+  }
+
+  > span:nth-of-type(3) {
+    transform: ${(props) =>
+      props.$isOpen ? "translateY(10px) rotate(-135deg)" : "translateY(10px)"};
+  }
+`;
