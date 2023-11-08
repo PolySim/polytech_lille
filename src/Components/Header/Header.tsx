@@ -1,8 +1,8 @@
 import { HeaderStyled } from "./headerStyled.ts";
 import { useEffect, useState } from "react";
 import Sponsor from "./Sponsor.tsx";
-import MenuLaptop from "./MenuLaptop.tsx";
-import MenuMobile from "./MenuMobile.tsx";
+import MenuLaptop from "./Menu/MenuLaptop.tsx";
+import MenuMobile from "./Menu/MenuMobile.tsx";
 import OpenMenu from "./OpenMenu.tsx";
 
 const Header = () => {
