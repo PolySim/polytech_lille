@@ -1,12 +1,24 @@
 import { MenuLaptopStyled } from "./headerStyled.ts";
 import { categories } from "@/Components/Header/categories.ts";
+import { useContext } from "react";
+import { MainContext } from "@/context.ts";
 
 const MenuLaptop = () => {
+  const { language, handlerLanguage } = useContext(MainContext);
+
   return (
     <MenuLaptopStyled>
-      {categories.map((category) => (
-        <p>{category.french}</p>
-      ))}
+      {categories.map((category) =>
+        category.french === "ENGLISH" ? (
+          <p key={category.english} onClick={handlerLanguage}>
+            {language === "french" ? category.french : category.english}
+          </p>
+        ) : (
+          <p key={category.english}>
+            {language === "french" ? category.french : category.english}
+          </p>
+        ),
+      )}
     </MenuLaptopStyled>
   );
 };

@@ -19,7 +19,7 @@ export const HeaderStyled = styled.header`
     z-index: 100;
 
     @media screen and (max-width: 768px) {
-      height: 75%;
+      filter: drop-shadow(0 0 0.75rem ${color.black});
     }
   }
 `;
