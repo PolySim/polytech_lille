@@ -1,14 +1,12 @@
 import { MenuLaptopStyled } from "./headerStyled.ts";
+import { categories } from "@/Components/Header/categories.ts";
 
 const MenuLaptop = () => {
   return (
     <MenuLaptopStyled>
-      <p>Ecole</p>
-      <p>Formations</p>
-      <p>Entreprise</p>
-      <p>International</p>
-      <p>Recherche</p>
-      <p>English</p>
+      {categories.map((category) => (
+        <p>{category.french}</p>
+      ))}
     </MenuLaptopStyled>
   );
 };
