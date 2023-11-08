@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { color, font } from "@/global_style.ts";
 
 export const HeaderStyled = styled.header`
   display: flex;
@@ -32,3 +33,21 @@ export const SponsorStyled = styled.div`
     margin-right: 0;
   }
 `;
+
+export const MenuLaptopStyled = styled.div`
+  display: flex;
+
+  p {
+    font-family: ${font.bebas};
+    font-size: 24px;
+    color: white;
+    filter: drop-shadow(0 0 0.75rem ${color.black});
+    margin: 0 0 0 24px;
+  }
+
+  p:nth-of-type(1) {
+    margin-left: 0;
+  }
+`;
+
+export const MenuMobileStyled = styled.div``;
