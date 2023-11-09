@@ -5,7 +5,7 @@ export const font = {
 };
 
 export const color = {
-  bleuDark: "#004876",
+  blueDark: "#004876",
   blueLight: "#009fe3",
   black: "#0f0f0f",
   lightYellow: "#fefee3",

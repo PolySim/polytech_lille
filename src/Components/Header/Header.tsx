@@ -2,16 +2,17 @@ import { HeaderStyled } from "./headerStyled.ts";
 import { useEffect, useState } from "react";
 import Sponsor from "./Sponsor.tsx";
 import MenuLaptop from "./Menu/MenuLaptop.tsx";
-import MenuMobile from "./Menu/MenuMobile.tsx";
 import OpenMenu from "./OpenMenu.tsx";
+import MenuMobile from "@/Components/Header/Menu/MenuMobile.tsx";
 
 const Header = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);
   const [MenuMobileOpen, setMenuMobileOpen] = useState<boolean>(false);
+  const [subMenuOpen, setSubMenuOpen] = useState<string>("");
 
-  const toggleMenuMobile = () => {
-    setMenuMobileOpen((curr) => !curr);
-  };
+  const toggleSubMenu = (category: string) => setSubMenuOpen(category);
+
+  const toggleMenuMobile = () => setMenuMobileOpen((curr) => !curr);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -32,10 +33,18 @@ const Header = () => {
           <Sponsor />
         </>
       ) : (
-        <MenuMobile isOpen={MenuMobileOpen} />
+        <MenuMobile
+          isOpen={MenuMobileOpen}
+          toggleSubMenu={toggleSubMenu}
+          subMenuOpen={subMenuOpen}
+        />
       )}
       {width <= 1280 ? (
-        <OpenMenu isOpen={MenuMobileOpen} toggleMenuMobile={toggleMenuMobile} />
+        <OpenMenu
+          isOpen={MenuMobileOpen}
+          toggleMenuMobile={toggleMenuMobile}
+          toggleSubMenu={toggleSubMenu}
+        />
       ) : null}
     </HeaderStyled>
   );

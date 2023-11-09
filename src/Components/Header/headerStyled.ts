@@ -103,7 +103,7 @@ export const MenuMobileStyled = styled.div<{ $isOpen: boolean }>`
   left: -100%;
   width: 100vw;
   height: 100vh;
-  background-color: ${color.bleuDark};
+  background-color: ${color.blueDark};
   transition: transform 0.3s ease-in-out;
   transform: ${(props) =>
     props.$isOpen ? "translateX(100%)" : "translateX(0)"};
@@ -114,4 +114,9 @@ export const CategoryStyled = styled.div<{ $last: boolean }>`
   font-size: 36px;
   margin-bottom: ${(props) => (props.$last ? "0" : "24px")};
   color: white;
+`;
+
+export const SubmenuStyled = styled(MenuMobileStyled)`
+  transform: ${(props) =>
+    props.$isOpen ? "translateX(100%)" : "translateX(200%)"};
 `;

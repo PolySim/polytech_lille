@@ -1,5 +1,5 @@
 import { MenuLaptopStyled } from "../headerStyled.ts";
-import { categories } from "@/Components/Header/Menu/categories.ts";
+import { menuCategories } from "@/Data/menuCategories.ts";
 import { useContext } from "react";
 import { MainContext } from "@/context.ts";
 
@@ -8,7 +8,7 @@ const MenuLaptop = () => {
 
   return (
     <MenuLaptopStyled>
-      {categories.map((category) =>
+      {menuCategories.map((category) =>
         category.french === "ENGLISH" ? (
           <p key={category.english} onClick={handlerLanguage}>
             {language === "french" ? category.french : category.english}
