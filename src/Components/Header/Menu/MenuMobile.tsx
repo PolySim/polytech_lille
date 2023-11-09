@@ -17,7 +17,11 @@ const MenuMobile = ({
         toggleSubMenu={toggleSubMenu}
         isOpen={subMenuOpen === ""}
       />
-      <SubMenuMobile categoryName={subMenuOpen} toggleSubMenu={toggleSubMenu} />
+      <SubMenuMobile
+        categoryName={subMenuOpen}
+        toggleSubMenu={toggleSubMenu}
+        isOpen={isOpen}
+      />
     </MenuMobileStyled>
   );
 };

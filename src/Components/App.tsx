@@ -2,9 +2,10 @@ import Header from "./Header/Header.tsx";
 import Home from "./Home/Home.tsx";
 import { MainContext } from "@/context.ts";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  const [language, setLanguage] = useState("french");
+  const [language, setLanguage] = useState<"french" | "english">("french");
 
   const handlerLanguage = () => {
     setLanguage((curr) => (curr === "french" ? "english" : "french"));
@@ -18,7 +19,9 @@ function App() {
       }}
     >
       <Header />
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </MainContext.Provider>
   );
 }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { color, font } from "@/global_style.ts";
+import { Link } from "react-router-dom";
 
 export const HeaderStyled = styled.header`
   display: flex;
@@ -114,9 +115,24 @@ export const CategoryStyled = styled.div<{ $last: boolean }>`
   font-size: 36px;
   margin-bottom: ${(props) => (props.$last ? "0" : "24px")};
   color: white;
+  cursor: pointer;
 `;
 
-export const SubmenuStyled = styled(MenuMobileStyled)`
+export const SubmenuStyled = styled(MenuMobileStyled)<{
+  $subMenuOpen: boolean;
+}>`
   transform: ${(props) =>
-    props.$isOpen ? "translateX(100%)" : "translateX(200%)"};
+    props.$subMenuOpen
+      ? "translateX(100%)"
+      : props.$isOpen
+      ? "translateX(200%)"
+      : "translateX(0)"};
+`;
+
+export const SubCategoryStyled = styled(Link)<{ $last?: boolean }>`
+  font-family: ${font.m2};
+  font-size: 20px;
+  margin-bottom: ${(props) => (props.$last ? "0" : "24px")};
+  color: white;
+  text-decoration: none;
 `;
