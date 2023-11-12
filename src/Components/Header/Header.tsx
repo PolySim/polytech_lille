@@ -1,9 +1,9 @@
 import { HeaderStyled } from "./headerStyled.ts";
 import { useEffect, useState } from "react";
 import Sponsor from "./Sponsor.tsx";
-import MenuLaptop from "./Menu/MenuLaptop.tsx";
+import MenuLaptop from "./Menu/Laptop/MenuLaptop.tsx";
 import OpenMenu from "./OpenMenu.tsx";
-import MenuMobile from "@/Components/Header/Menu/MenuMobile.tsx";
+import MenuMobile from "@/Components/Header/Menu/Mobile/MenuMobile.tsx";
 
 const Header = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);

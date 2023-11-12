@@ -1,6 +1,6 @@
 import { MenuMobileStyled } from "@/Components/Header/headerStyled.ts";
-import MenuMobileMain from "@/Components/Header/Menu/MenuMobileMain.tsx";
-import SubMenuMobile from "@/Components/Header/Menu/SubMenuMobile.tsx";
+import MenuMobileMain from "@/Components/Header/Menu/Mobile/MenuMobileMain.tsx";
+import SubMenuMobile from "@/Components/Header/Menu/Mobile/SubMenuMobile.tsx";
 
 const MenuMobile = ({
   isOpen,

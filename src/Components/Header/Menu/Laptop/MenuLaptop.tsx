@@ -1,4 +1,4 @@
-import { MenuLaptopStyled } from "../headerStyled.ts";
+import { MenuLaptopStyled } from "../../headerStyled.ts";
 import { menuCategories } from "@/Data/menuCategories.ts";
 import { useContext } from "react";
 import { MainContext } from "@/context.ts";

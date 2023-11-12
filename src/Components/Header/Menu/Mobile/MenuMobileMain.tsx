@@ -1,4 +1,4 @@
-import { CategoryStyled, MenuMobileStyled } from "../headerStyled.ts";
+import { CategoryStyled, MenuMobileStyled } from "../../headerStyled.ts";
 import { menuCategories } from "@/Data/menuCategories.ts";
 import { useContext } from "react";
 import { MainContext } from "@/context.ts";
