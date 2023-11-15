@@ -8,6 +8,7 @@ type Category = {
 type CategoriesType = {
   english: string;
   french: string;
+  id: number;
   submenu?: Category[];
 }[];
 
@@ -15,6 +16,7 @@ export const menuCategories: CategoriesType = [
   {
     english: "ABOUT US",
     french: "ECOLE",
+    id: 1,
     submenu: [
       {
         french: "POLYTECH LILLE, GRANDE ÉCOLE D'INGÉNIEURS UNIVERSITAIRE",
@@ -46,6 +48,7 @@ export const menuCategories: CategoriesType = [
   {
     english: "EDUCATION",
     french: "FORMATIONS",
+    id: 2,
     submenu: [
       {
         french: "Ingénieur, c'est quoi ?",
@@ -82,21 +85,26 @@ export const menuCategories: CategoriesType = [
   {
     english: "COMPANIES",
     french: "ENTREPRISES",
+    id: 3,
   },
   {
     english: "RESEARCH",
     french: "RECHERCHE",
+    id: 4,
   },
   {
     english: "INTERNATIONAL",
     french: "INTERNATIONAL",
+    id: 5,
   },
   {
     english: "CAMPUS LIFE",
     french: "VIE DU CAMPUS",
+    id: 6,
   },
   {
     english: "FRANCAIS",
     french: "ENGLISH",
+    id: 7,
   },
 ];

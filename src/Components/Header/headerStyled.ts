@@ -48,6 +48,8 @@ export const MenuLaptopStyled = styled.div`
     color: white;
     filter: drop-shadow(0 0 0.75rem ${color.black});
     margin: 0 0 0 24px;
+    cursor: pointer;
+    z-index: 1000;
   }
 
   p:nth-of-type(1) {
@@ -110,7 +112,7 @@ export const MenuMobileStyled = styled.div<{ $isOpen: boolean }>`
     props.$isOpen ? "translateX(100%)" : "translateX(0)"};
 `;
 
-export const CategoryStyled = styled.div<{ $last: boolean }>`
+export const CategoryStyled = styled.div<{ $last?: boolean }>`
   font-family: ${font.bebas};
   font-size: 36px;
   margin-bottom: ${(props) => (props.$last ? "0" : "24px")};
@@ -135,4 +137,21 @@ export const SubCategoryStyled = styled(Link)<{ $last?: boolean }>`
   margin-bottom: ${(props) => (props.$last ? "0" : "24px")};
   color: white;
   text-decoration: none;
+`;
+
+export const SubMenuLaptopStyled = styled.div<{ $isOpen: boolean }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 80px 48px 24px 48px;
+  width: 100vw;
+  height: fit-content;
+  background-color: ${color.blueDark};
+  transition: transform 0.3s ease-in-out;
+  transform: ${(props) =>
+    props.$isOpen ? "translateY(0)" : "translateY(-100%)"};
 `;
