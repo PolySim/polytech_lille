@@ -1,7 +1,16 @@
 import styled from "styled-components";
 import { color, font } from "@/global_style.ts";
 
+export const HomeContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+`;
+
 export const HomeStyled = styled.div`
+  scroll-snap-align: center;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -33,4 +42,19 @@ export const HomeStyled = styled.div`
       font-size: 48px;
     }
   }
+`;
+
+export const HomeContent = styled.div`
+  scroll-snap-align: start;
+  height: 150vh;
+  width: 100%;
+  background-color: ${color.blueDark};
+`;
+
+export const WelcomeStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
 `;

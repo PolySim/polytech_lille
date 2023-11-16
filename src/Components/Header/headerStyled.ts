@@ -137,6 +137,11 @@ export const SubCategoryStyled = styled(Link)<{ $last?: boolean }>`
   margin-bottom: ${(props) => (props.$last ? "0" : "24px")};
   color: white;
   text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const SubMenuLaptopStyled = styled.div<{ $isOpen: boolean }>`
