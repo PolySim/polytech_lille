@@ -1,6 +1,6 @@
 import Header from "./Header/Header.tsx";
 import Home from "./Home/Home.tsx";
-import { MainContext } from "@/context.ts";
+import { MainContext } from "@/Context/context.ts";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
