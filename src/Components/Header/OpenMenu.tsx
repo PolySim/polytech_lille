@@ -1,22 +1,12 @@
 import { OpenMenuStyled } from "@/Components/Header/headerStyled.ts";
+import { useContext } from "react";
+import { MenuContext } from "@/Context/MenuContext.ts";
 
-const OpenMenu = ({
-  isOpen,
-  toggleMenuMobile,
-  toggleSubMenu,
-}: {
-  isOpen: boolean;
-  toggleMenuMobile: () => void;
-  toggleSubMenu: (category: string) => void;
-}) => {
+const OpenMenu = () => {
+  const { isOpen, toggleOpen } = useContext(MenuContext);
+
   return (
-    <OpenMenuStyled
-      $isOpen={isOpen}
-      onClick={() => {
-        toggleMenuMobile();
-        toggleSubMenu("");
-      }}
-    >
+    <OpenMenuStyled $isOpen={isOpen.menu} onClick={() => toggleOpen("menu")}>
       <span></span>
       <span></span>
       <span></span>

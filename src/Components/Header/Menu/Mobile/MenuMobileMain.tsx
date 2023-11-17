@@ -1,19 +1,15 @@
 import { CategoryStyled, MenuMobileStyled } from "../../headerStyled.ts";
 import { menuCategories } from "@/Data/menuCategories.ts";
 import { useContext } from "react";
-import { MainContext } from "@/context.ts";
+import { MainContext } from "@/Context/context.ts";
+import { MenuContext } from "@/Context/MenuContext.ts";
 
-const MenuMobileMain = ({
-  isOpen,
-  toggleSubMenu,
-}: {
-  isOpen: boolean;
-  toggleSubMenu: (category: string) => void;
-}) => {
+const MenuMobileMain = () => {
   const { language, handlerLanguage } = useContext(MainContext);
+  const { isOpen, toggleOpen } = useContext(MenuContext);
 
   return (
-    <MenuMobileStyled $isOpen={isOpen}>
+    <MenuMobileStyled $isOpen={isOpen.menu}>
       {menuCategories.map((category, index) =>
         category.french === "ENGLISH" ? (
           <CategoryStyled
@@ -27,7 +23,7 @@ const MenuMobileMain = ({
           <CategoryStyled
             key={category.english}
             $last={index + 1 === menuCategories.length}
-            onClick={() => toggleSubMenu(category.english)}
+            onClick={() => toggleOpen("submenu", category.id)}
           >
             {language === "french" ? category.french : category.english}
           </CategoryStyled>

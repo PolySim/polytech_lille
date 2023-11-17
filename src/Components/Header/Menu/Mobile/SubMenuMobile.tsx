@@ -4,26 +4,23 @@ import {
   SubCategoryStyled,
   SubmenuStyled,
 } from "@/Components/Header/headerStyled.ts";
-import { MainContext } from "@/context.ts";
+import { MainContext } from "@/Context/context.ts";
 import { useContext } from "react";
+import { MenuContext } from "@/Context/MenuContext.ts";
 
-const SubMenuMobile = ({
-  toggleSubMenu,
-  categoryName,
-  isOpen,
-}: {
-  toggleSubMenu: (category: string) => void;
-  categoryName: string;
-  isOpen: boolean;
-}) => {
+const SubMenuMobile = () => {
   const { language } = useContext(MainContext);
+  const { isOpen, toggleOpen } = useContext(MenuContext);
   const subMenuCategories = menuCategories.find(
-    (category) => category.english === categoryName,
+    (category) => category.id === isOpen.submenu,
   )?.submenu;
 
   return (
-    <SubmenuStyled $isOpen={isOpen} $subMenuOpen={categoryName !== ""}>
-      <CategoryStyled $last={false} onClick={() => toggleSubMenu("")}>
+    <SubmenuStyled
+      $isOpen={isOpen.menu}
+      $subMenuOpen={isOpen.submenu !== undefined}
+    >
+      <CategoryStyled $last={false} onClick={() => toggleOpen("submenu")}>
         {language === "french" ? "Retour" : "Back"}
       </CategoryStyled>
       {subMenuCategories ? (
@@ -41,7 +38,7 @@ const SubMenuMobile = ({
               to={category.link || "/"}
               $last={false}
               key={category.english}
-              onClick={() => toggleSubMenu("")}
+              onClick={() => toggleOpen("both")}
             >
               {language === "french" ? category.french : category.english}
             </SubCategoryStyled>

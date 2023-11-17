@@ -1,7 +1,7 @@
 import { MenuLaptopStyled } from "../../headerStyled.ts";
 import { menuCategories } from "@/Data/menuCategories.ts";
 import { useContext, useState } from "react";
-import { MainContext } from "@/context.ts";
+import { MainContext } from "@/Context/context.ts";
 import SubMenuLaptop from "@/Components/Header/Menu/Laptop/SubMenuLaptop.tsx";
 
 const MenuLaptop = () => {

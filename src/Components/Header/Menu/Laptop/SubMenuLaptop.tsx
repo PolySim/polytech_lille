@@ -4,7 +4,7 @@ import {
   SubMenuLaptopStyled,
 } from "@/Components/Header/headerStyled.ts";
 import { menuCategories } from "@/Data/menuCategories.ts";
-import { MainContext } from "@/context.ts";
+import { MainContext } from "@/Context/context.ts";
 import { useContext } from "react";
 
 const SubMenuLaptop = ({

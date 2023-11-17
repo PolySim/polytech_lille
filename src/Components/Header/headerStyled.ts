@@ -114,6 +114,7 @@ export const MenuMobileStyled = styled.div<{ $isOpen: boolean }>`
 
 export const CategoryStyled = styled.div<{ $last?: boolean }>`
   font-family: ${font.bebas};
+  text-align: center;
   font-size: 36px;
   margin-bottom: ${(props) => (props.$last ? "0" : "24px")};
   color: white;
