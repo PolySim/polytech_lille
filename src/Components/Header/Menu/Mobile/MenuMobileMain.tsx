@@ -15,7 +15,10 @@ const MenuMobileMain = () => {
           <CategoryStyled
             key={category.english}
             $last={index + 1 === menuCategories.length}
-            onClick={handlerLanguage}
+            onClick={() => {
+              handlerLanguage();
+              toggleOpen("menu");
+            }}
           >
             {language === "french" ? category.french : category.english}
           </CategoryStyled>
