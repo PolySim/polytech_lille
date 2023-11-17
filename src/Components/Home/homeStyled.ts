@@ -46,15 +46,52 @@ export const HomeStyled = styled.div`
 
 export const HomeContent = styled.div`
   scroll-snap-align: start;
-  height: 150vh;
+  min-height: 100vh;
   width: 100%;
   background-color: ${color.blueDark};
 `;
 
 export const WelcomeStyled = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   height: fit-content;
   width: 100%;
+  padding: 96px 48px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 72px 24px 48px;
+  }
+`;
+
+export const WelcomeContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+
+  h4 {
+    font-family: ${font.bebas};
+    font-size: 36px;
+    color: white;
+    margin-bottom: 24px;
+  }
+
+  p {
+    color: ${color.lightYellow};
+    line-height: 1.5;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 48px;
+
+    h4 {
+      padding-left: 24px;
+    }
+  }
 `;

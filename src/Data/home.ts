@@ -1,10 +1,10 @@
 export const welcome = {
   linkVideo: "https://my.matterport.com/show/?m=7gpARB8WWiz",
-  title: {
-    french: "BIENVENUE À POLYTECH LILLE !",
-    english: "WELCOME TO POLYTECH LILLE!",
-  },
   leftContent: {
+    title: {
+      french: "L'école",
+      english: "The school",
+    },
     french:
       "L'école d'ingénieur polytechnique de l'Université de Lille, membre du réseau Polytech qui regroupe 15 écoles d'ingénieur polytechniques universitaires publiques en France et 100 000 ingénieurs en activité.\n" +
       "Notre école, publique, est accessible en cycle ingénieur (3 ans) à bac+2 à de multiples profils mais également directement après le bac grâce à un parcours original de 2 ans, le Parcours des écoles d'ingénieurs Polytech.\n" +
@@ -15,6 +15,10 @@ export const welcome = {
       "9 engineering specialties are offered at Polytech Lille, under student status but also apprentice and 100 at the Polytech schools level.",
   },
   rightContent: {
+    title: {
+      french: "INTÉGRER POLYTECH LILLE",
+      english: "JOIN POLYTECH LILLE",
+    },
     french:
       "Rencontrons-nous ! Nos rendez-vous, nos contacts\n" +
       "L'intégration %(/education/polytech-after-the-baccalaureate)après bac% se fait via le concours Geipi-Polytech (avril 2024).\n" +
