@@ -51,6 +51,10 @@ const Welcome = () => {
                 </span>
               ))}
         </p>
+        <img
+          src="https://www.polytech-lille.fr/wp-content/uploads/2021/02/rentree2.jpg"
+          alt="Polytech student"
+        />
       </WelcomeContent>
     </WelcomeStyled>
   );
