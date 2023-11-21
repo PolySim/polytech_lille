@@ -6,7 +6,7 @@ export const HeaderStyled = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -14,6 +14,7 @@ export const HeaderStyled = styled.header`
   height: 75px;
   width: 100%;
   z-index: 10;
+  backdrop-filter: saturate(100%) blur(30px);
 
   > div:nth-of-type(1) {
     height: 100%;
